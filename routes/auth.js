@@ -13,6 +13,19 @@ router.get('/github/return', passport.authenticate('github', {faliureRedirect: '
      }   
 );
 
+
+// GET /auth/login/facebook
+router.get('/login/facebook', passport.authenticate('facebook',  {scope: ['email']}));
+
+// GET /auth/facebook/return
+router.get('/facebook/return', passport.authenticate('facebook', {faliureRedirect: '/'}),
+     function (req, res) {
+         // Success auth
+         res.redirect('/profile');
+     }   
+);
+
+
 // GET /auth/logout
 router.get('/logout', function(req, res){
     req.logout();
