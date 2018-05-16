@@ -1,5 +1,8 @@
 .DS_Store
 
+# Secrets
+credentials.txt
+
 # Logs
 logs
 *.log
